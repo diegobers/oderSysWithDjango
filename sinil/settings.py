@@ -14,7 +14,6 @@ AUTH_USER_MODEL = 'sinil_auth.User'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-
 # Application definition
 INSTALLED_APPS = [
     'sinil_auth',
@@ -26,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'crispy_bootstrap5',
+    'pedidos',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +43,7 @@ ROOT_URLCONF = 'sinil.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
