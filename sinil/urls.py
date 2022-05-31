@@ -1,12 +1,13 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from sinil_auth.views import perfil
-from pedidos.views import index
+import sinil_auth.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('perfil/', perfil, name='perfil'),
-    path('pedidos/', index, name='pedidos'),
+    #path('pedidos/', index, name='pedidos'),
+
+    path("accounts/", include("django.contrib.auth.urls")), 
+    path('', sinil_auth.views.perfil, name='perfil'),
+    #path('perfil/', sinil_auth.views.perfil, name='perfil'),
 ]
